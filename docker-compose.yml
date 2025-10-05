@@ -1,0 +1,45 @@
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: shopdb
+      MYSQL_USER: shopuser
+      MYSQL_PASSWORD: shoppassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./srv/database:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: shopuser
+      WORDPRESS_DB_PASSWORD: shoppassword
+      WORDPRESS_DB_NAME: shopdb
+    ports:
+      - "8080:80"
+    volumes:
+      - ./srv/wordpress:/var/www/html
+      - ./themes:/var/www/html/wp-content/themes
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
+      - ./srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    depends_on:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: shopuser
+      PMA_PASSWORD: shoppassword
+      MYSQL_ROOT_PASSWORD: wordpress
+    ports:
+      - "8181:80"
+    depends_on:
+      - mysql

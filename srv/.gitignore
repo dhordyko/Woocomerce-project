@@ -1,0 +1,26 @@
+.DS_Store
+/srv/*
+!/srv/wordpress
+/plugins/alismet
+/plugins/hello.php
+/themes/twentytwenty
+/themes/twentytwentyone
+/themes/twentytwentytwo
+/themes/twentytwentythree
+/themes/twentytwentyfour
+# Ignore MySQL data volumes
+srv/database/
+
+# Ignore WordPress volume
+srv/wordpress/
+
+# Ignore OS and editor junk
+.DS_Store
+Thumbs.db
+
+# Node or composer deps (if ever used)
+node_modules/
+vendor/
+
+# Env files
+.env
