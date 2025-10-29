@@ -1,0 +1,29 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-header/editor.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+header .inner-header {
+  display: flex;
+  background: #fafafb;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+header .inner-header .right-section {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+header .inner-header .right-section svg {
+  font-size: 25px;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+header .inner-header .right-section .header-member-link a {
+  color: black;
+}

@@ -1,0 +1,32 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+ $white: #fafafb;
+header {
+	.inner-header {
+		display: flex;
+		background: $white;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 20px;
+
+		.right-section {
+			display: flex;
+			gap: 15px;
+			align-items: center;
+			svg {
+				font-size: 25px;
+				display: block;
+				width: 25px;
+				height: 25px;
+			}
+			.header-member-link {
+				a {
+					color: black;
+				}
+			}
+		}
+	}
+}

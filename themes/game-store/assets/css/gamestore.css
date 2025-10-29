@@ -1,0 +1,558 @@
+/* Styles intended only for frond */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+/* =======================================
+   WordPress Block Theme Reset
+   Minimal, Gutenberg-safe reset
+======================================= */
+
+/*1. Box sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 3. Set up default body styles 
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 4. Reset lists 
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 5. Images, videos, embeds 
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Forms 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* 7. Buttons 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 8. Remove animations for users who prefer reduced motion 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 9. Respect WordPress theme.json typography & spacing 
+:where(.wp-site-blocks) {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0;
+}
+
+/* 10. Alignments fix 
+.alignwide,
+.alignfull {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 11. Tables 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}*/
+
+/* =========================================================
+   WordPress Theme Reset (FSE-safe)
+   Based on Normalize + Gutenberg + Modern CSS practices
+   ========================================================= */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  background-color: #fff;
+  color: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default blockquote styling */
+blockquote {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Reset headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 1.2;
+}
+
+/* Reset anchor styles */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  border: 0;
+}
+
+/* Remove default form styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  border-radius: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  padding: 0;
+}
+
+/* Figures */
+figure {
+  margin: 0;
+}
+
+/* WordPress alignment resets */
+.alignleft {
+  float: left;
+  margin-right: 1em;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1em;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove default WP gallery spacing */
+.wp-block-gallery {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove gap on embedded blocks */
+.wp-block-embed {
+  margin: 0;
+}
+
+/* Prevent WordPress images from stretching oddly */
+.wp-block-image img {
+  height: auto;
+}
+
+/* Reset figure caption */
+figcaption {
+  font-size: 0.9em;
+  text-align: center;
+  color: #666;
+  margin-top: 0.5em;
+}
+
+/* Remove margins on block containers */
+.wp-block-group,
+.wp-block-columns,
+.wp-block-cover,
+.wp-block-media-text {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix button block */
+.wp-block-button__link {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Make sure iframe embeds are responsive */
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+/* Reset hr */
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+/* Accessibility focus outline */
+:focus-visible {
+  outline: 2px solid #005aff;
+  outline-offset: 2px;
+}
+
+/* Remove all animation and transition for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* =========================================================
+   WordPress Theme Reset (FSE-safe)
+   Based on Normalize + Gutenberg + Modern CSS practices
+   ========================================================= */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  background-color: #fff;
+  color: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default blockquote styling */
+blockquote {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Reset headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 1.2;
+}
+
+/* Reset anchor styles */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  border: 0;
+}
+
+/* Remove default form styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  border-radius: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  padding: 0;
+}
+
+/* Figures */
+figure {
+  margin: 0;
+}
+
+/* WordPress alignment resets */
+.alignleft {
+  float: left;
+  margin-right: 1em;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1em;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove default WP gallery spacing */
+.wp-block-gallery {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove gap on embedded blocks */
+.wp-block-embed {
+  margin: 0;
+}
+
+/* Prevent WordPress images from stretching oddly */
+.wp-block-image img {
+  height: auto;
+}
+
+/* Reset figure caption */
+figcaption {
+  font-size: 0.9em;
+  text-align: center;
+  color: #666;
+  margin-top: 0.5em;
+}
+
+/* Remove margins on block containers */
+.wp-block-group,
+.wp-block-columns,
+.wp-block-cover,
+.wp-block-media-text {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix button block */
+.wp-block-button__link {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Make sure iframe embeds are responsive */
+iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+/* Reset hr */
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+/* Accessibility focus outline */
+:focus-visible {
+  outline: 2px solid #005aff;
+  outline-offset: 2px;
+}
+
+/* Remove all animation and transition for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
