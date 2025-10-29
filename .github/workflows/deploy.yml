@@ -1,4 +1,4 @@
-name: Deploy Theme to Server
+name: Deploy Theme and Plugins to Server
 
 on:
   push:
@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Upload theme
       - name: Upload theme via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -22,3 +23,25 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           local-dir: ./themes/game-store/
           server-dir: /htdocs/srv/wordpress/wp-content/themes/game-store/
+          state-name: .ftp-deploy-theme-state.json
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+
+      # Upload plugins
+      - name: Upload plugins via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          local-dir: ./plugins/
+          server-dir: /htdocs/srv/wordpress/wp-content/plugins/
+          state-name: .ftp-deploy-plugins-state.json
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            **/node_modules/**
+
