@@ -17,4 +17,5 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Styles intended only for the front.*/
 :root {
   --wp--preset--color--primary: #3cc4f6;
+  --wp--preset--color--primary2: #f53cdc;
 }
