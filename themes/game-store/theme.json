@@ -4,6 +4,7 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
+			 "defaultPalette": false,
 			"palette": [
 				{
 					"slug": "base",
@@ -253,7 +254,7 @@
 		},
 		"color": {
 			"background": "var(--wp--preset--color--base)",
-			"text": "var(--wp--preset--color--contrast)"
+			"text": "var(--wp--preset--color--primary)"
 		},
 		"elements": {
 			"button": {
